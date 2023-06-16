@@ -14,7 +14,7 @@ async function handleRequest(request, env, ctx) {
   if (url.searchParams.get('success') === '1') {
     return showSuccess();
   } else if (url.searchParams.get('retry') === '1') {
-    return showRetry();
+    return showRetry(url);
   } else {
     return redirectToCheckout(env.STRIPE_API_KEY, url);
   }
